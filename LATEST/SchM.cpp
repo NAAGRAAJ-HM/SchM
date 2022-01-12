@@ -2,15 +2,15 @@
 
 class_SchM SchM;
 
-void class_SchM::Start(void){
+FUNC(void, SCHM_CODE) class_SchM::Start(void){
 }
 
-void class_SchM::InitFunction(void){
+FUNC(void, SCHM_CODE) class_SchM::InitFunction(void){
 }
 
-void class_SchM::DeInitFunction(void){
+FUNC(void, SCHM_CODE) class_SchM::DeInitFunction(void){
 }
 
-void class_SchM::StartTiming(void){
+FUNC(void, SCHM_CODE) class_SchM::StartTiming(void){
 }
 
