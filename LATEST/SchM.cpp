@@ -14,3 +14,18 @@ FUNC(void, SCHM_CODE) class_SchM::DeInitFunction(void){
 FUNC(void, SCHM_CODE) class_SchM::StartTiming(void){
 }
 
+FUNC(void, SCHM_CODE) class_SchM::GetVersionInfo(void){
+}
+
+FUNC(void, SCHM_CODE) class_SchM::Enter(void){
+}
+
+FUNC(void, SCHM_CODE) class_SchM::Exit(void){
+}
+
+FUNC(void, SCHM_CODE) class_SchM::ActMainFunction(void){
+}
+
+FUNC(void, SCHM_CODE) class_SchM::CancelMainFunction(void){
+}
+
