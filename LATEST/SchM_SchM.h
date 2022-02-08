@@ -1,20 +1,18 @@
+#pragma once
 /*****************************************************/
-/* File   : SchM.cpp                                 */
+/* File   : SchM_SchM.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "SchM.h"
+#include "Compiler_Cfg_SchM.h"
 
-#include "SchM_EcuM.h"
-#include "SchM_SchM.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -24,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_SchM_SchM : public class_SchM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, SCHM_CODE) MainFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -36,39 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SchM_EcuM SchM_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM_EcuM;
-class_SchM SchM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, SCHM_CODE) class_SchM_EcuM::InitFunction(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM_EcuM::DeInitFunction(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::ActMainFunction(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::CancelMainFunction(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::Start(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::StartTiming(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::GetVersionInfo(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::Enter(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM::Exit(void){
-}
+extern class_SchM_Client *SchM_Client_ptr_SchM;
 
 /*****************************************************/
 /* EOF                                               */
