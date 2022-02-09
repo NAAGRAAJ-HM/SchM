@@ -9,7 +9,6 @@
 #include "SchM.h"
 
 #include "SchM_EcuM.h"
-#include "SchM_SchM.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -36,17 +35,20 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SchM_EcuM SchM_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM_EcuM;
+class_SchM_EcuM_Init SchM_EcuM_Init;
+class_SchM_EcuM_DeInit SchM_EcuM_DeInit;
 class_SchM SchM;
+
+class_EcuM_Init_Client *EcuM_Init_Client_ptr_SchM = &SchM_EcuM_Init;
+class_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_SchM = &SchM_EcuM_DeInit;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SCHM_CODE) class_SchM_EcuM::InitFunction(void){
+FUNC(void, SCHM_CODE) class_SchM_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_EcuM::DeInitFunction(void){
+FUNC(void, SCHM_CODE) class_SchM_EcuM_DeInit::DeInitFunction(void){
 }
 
 FUNC(void, SCHM_CODE) class_SchM::ActMainFunction(void){
