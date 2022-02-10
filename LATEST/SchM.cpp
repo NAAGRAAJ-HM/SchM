@@ -6,14 +6,12 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "SchM.h"
+#include "module.h"
 
-#include "SchM_EcuM.h"
+#include "SchM_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
-/*****************************************************/
-
 /*****************************************************/
 
 /*****************************************************/
@@ -23,6 +21,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_SchM : public class_module{
+   public:
+      FUNC(void, SCHM_CODE) InitFunction   (void);
+      FUNC(void, SCHM_CODE) DeInitFunction (void);
+      FUNC(void, SCHM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -35,41 +39,43 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_SchM_EcuM_Init SchM_EcuM_Init;
-class_SchM_EcuM_DeInit SchM_EcuM_DeInit;
-class_SchM SchM;
+module_SchM SchM;
 
-class_EcuM_Init_Client *EcuM_Init_Client_ptr_SchM = &SchM_EcuM_Init;
-class_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_SchM = &SchM_EcuM_DeInit;
+class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM;
+class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, SCHM_CODE) class_SchM_EcuM_Init::InitFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::InitFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_EcuM_DeInit::DeInitFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::ActMainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
+//TBD
 }
 
-FUNC(void, SCHM_CODE) class_SchM::CancelMainFunction(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::ActMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::Start(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::CancelMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::StartTiming(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::Start(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::GetVersionInfo(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::StartTiming(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::Enter(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::GetVersionInfo(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM::Exit(void){
+FUNC(void, SCHM_CODE) class_SchM_Unused::Enter(void){
+}
+
+FUNC(void, SCHM_CODE) class_SchM_Unused::Exit(void){
 }
 
 /*****************************************************/
