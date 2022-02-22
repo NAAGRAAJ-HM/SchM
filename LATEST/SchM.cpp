@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "SchM_EcuM.h"
+#include "SchM_SchM.h"
 #include "SchM_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_SchM : public class_module{
+class module_SchM:
+      public abstract_module
+   ,  public interface_SchM_EcuM
+   ,  public interface_SchM_SchM
+{
    public:
       FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
@@ -41,8 +46,8 @@ class module_SchM : public class_module{
 /*****************************************************/
 module_SchM SchM;
 
-//class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM;
-//class_EcuM_Client *EcuM_Client_ptr_SchM = &SchM;
+interface_SchM_EcuM *EcuM_Client_ptr_SchM = &SchM;
+interface_SchM_SchM *SchM_Client_ptr_SchM = &SchM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
