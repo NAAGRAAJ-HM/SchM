@@ -26,8 +26,6 @@ class class_SchM_Unused{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, SCHM_CODE) Start              (void);
-      FUNC(void, SCHM_CODE) StartTiming        (void);
       FUNC(void, SCHM_CODE) GetVersionInfo     (void);
       FUNC(void, SCHM_CODE) Enter              (void);
       FUNC(void, SCHM_CODE) Exit               (void);

@@ -29,6 +29,8 @@ class interface_SchM_EcuM : public interface_EcuM_Client{
 /*****************************************************/
       FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
+      FUNC(void, SCHM_CODE) Start          (void);
+      FUNC(void, SCHM_CODE) StartTiming    (void);
 };
 
 /*****************************************************/

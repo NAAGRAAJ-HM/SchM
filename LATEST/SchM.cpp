@@ -31,6 +31,8 @@ class module_SchM:
       FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
+      FUNC(void, SCHM_CODE) Start          (void);
+      FUNC(void, SCHM_CODE) StartTiming    (void);
 };
 
 /*****************************************************/
@@ -62,16 +64,16 @@ FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
 //TBD
 }
 
+FUNC(void, SCHM_CODE) module_SchM::Start(void){
+}
+
+FUNC(void, SCHM_CODE) module_SchM::StartTiming(void){
+}
+
 FUNC(void, SCHM_CODE) class_SchM_Unused::ActMainFunction(void){
 }
 
 FUNC(void, SCHM_CODE) class_SchM_Unused::CancelMainFunction(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM_Unused::Start(void){
-}
-
-FUNC(void, SCHM_CODE) class_SchM_Unused::StartTiming(void){
 }
 
 FUNC(void, SCHM_CODE) class_SchM_Unused::GetVersionInfo(void){
