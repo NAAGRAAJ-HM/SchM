@@ -27,10 +27,10 @@ class interface_SchM_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, SCHM_CODE) InitFunction   (void);
-      FUNC(void, SCHM_CODE) DeInitFunction (void);
-      FUNC(void, SCHM_CODE) Start          (void);
-      FUNC(void, SCHM_CODE) StartTiming    (void);
+      virtual FUNC(void, SCHM_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, SCHM_CODE) DeInitFunction (void) = 0;
+      virtual FUNC(void, SCHM_CODE) Start          (void) = 0;
+      virtual FUNC(void, SCHM_CODE) StartTiming    (void) = 0;
 };
 
 /*****************************************************/
