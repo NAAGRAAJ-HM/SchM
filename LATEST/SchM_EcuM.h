@@ -9,8 +9,6 @@
 /*****************************************************/
 #include "Compiler_Cfg_SchM.h"
 
-#include "EcuM_Client.h"
-
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -22,15 +20,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_SchM_EcuM : public interface_EcuM_Client{
+class interface_SchM_EcuM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      virtual FUNC(void, SCHM_CODE) InitFunction   (void) = 0;
-      virtual FUNC(void, SCHM_CODE) DeInitFunction (void) = 0;
-      virtual FUNC(void, SCHM_CODE) Start          (void) = 0;
-      virtual FUNC(void, SCHM_CODE) StartTiming    (void) = 0;
+      virtual FUNC(void, SCHM_CODE) Start       (void) = 0;
+      virtual FUNC(void, SCHM_CODE) StartTiming (void) = 0;
 };
 
 /*****************************************************/
@@ -44,7 +40,8 @@ class interface_SchM_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_SchM_EcuM *EcuM_Client_ptr_SchM;
+extern infEcuMClient *gptrinfEcuMClient_SchM;
+extern interface_SchM_EcuM   *EcuM_Client_ptr_SchM;
 
 /*****************************************************/
 /* EOF                                               */

@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_SchM:
       public abstract_module
-   ,  public interface_SchM_EcuM
-   ,  public interface_SchM_SchM
 {
    public:
       FUNC(void, SCHM_CODE) InitFunction   (void);
@@ -46,10 +44,9 @@ class module_SchM:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_SchM SchM;
-
-interface_SchM_EcuM *EcuM_Client_ptr_SchM = &SchM;
-interface_SchM_SchM *SchM_Client_ptr_SchM = &SchM;
+module_SchM    SchM;
+infEcuMClient* gptrinfEcuMClient_SchM = &SchM;
+infSchMClient* gptrinfSchMClient_SchM = &SchM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
