@@ -40,8 +40,8 @@ class interface_SchM_EcuM{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infEcuMClient *gptrinfEcuMClient_SchM;
-extern interface_SchM_EcuM   *EcuM_Client_ptr_SchM;
+extern infEcuMClient* gptrinfEcuMClient_SchM;
+extern interface_SchM_EcuM*   gptrinfSchM_EcuM;
 
 /*****************************************************/
 /* EOF                                               */
