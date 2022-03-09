@@ -20,7 +20,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_SchM_EcuM{
+class infSchM_EcuM{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -41,7 +41,7 @@ class interface_SchM_EcuM{
 /* OBJECTS                                           */
 /*****************************************************/
 extern infEcuMClient* gptrinfEcuMClient_SchM;
-extern interface_SchM_EcuM*   gptrinfSchM_EcuM;
+extern infSchM_EcuM*  gptrinfSchM_EcuM;
 
 /*****************************************************/
 /* EOF                                               */

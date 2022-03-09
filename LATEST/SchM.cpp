@@ -24,6 +24,7 @@
 /*****************************************************/
 class module_SchM:
       public abstract_module
+   ,  public infSchM_EcuM
 {
    public:
       FUNC(void, SCHM_CODE) InitFunction   (void);
@@ -47,6 +48,7 @@ class module_SchM:
 module_SchM    SchM;
 infEcuMClient* gptrinfEcuMClient_SchM = &SchM;
 infSchMClient* gptrinfSchMClient_SchM = &SchM;
+infSchM_EcuM*  gptrinfSchM_EcuM       = &SchM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
