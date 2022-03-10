@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "SchM_EcuM.h"
-#include "SchM_SchM.h"
+#include "infSchM_EcuM.h"
+#include "infSchM_SchM.h"
 #include "SchM_Unused.h"
 
 /*****************************************************/
@@ -29,6 +29,7 @@ class module_SchM:
    public:
       FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
+      FUNC(void, SCHM_CODE) GetVersionInfo (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
       FUNC(void, SCHM_CODE) Start          (void);
       FUNC(void, SCHM_CODE) StartTiming    (void);
@@ -47,6 +48,7 @@ class module_SchM:
 /*****************************************************/
 module_SchM    SchM;
 infEcuMClient* gptrinfEcuMClient_SchM = &SchM;
+infDcmClient*  gptrinfDcmClient_SchM  = &SchM;
 infSchMClient* gptrinfSchMClient_SchM = &SchM;
 infSchM_EcuM*  gptrinfSchM_EcuM       = &SchM;
 
@@ -57,6 +59,9 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(void){
 }
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
+}
+
+FUNC(void, SCHM_CODE) module_SchM::GetVersionInfo(void){
 }
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
