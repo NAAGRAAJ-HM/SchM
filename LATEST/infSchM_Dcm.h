@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : SchM_SchM.h                              */
+/* File   : infSchM_Dcm.h                            */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_SchM;
+extern infDcmClient* gptrinfDcmClient_SchM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
