@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infSchM_Version.h"
-
 #include "module.h"
+#include "infSchM_Version.h"
 #include "infSchM_EcuM.h"
 #include "infSchM_Dcm.h"
 #include "infSchM_SchM.h"
@@ -58,9 +57,11 @@ CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SCHM_CODE) module_SchM::InitFunction(void){
+   SchM.IsInitDone = E_OK;
 }
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
+   SchM.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, SCHM_CODE) module_SchM::GetVersionInfo(void){
