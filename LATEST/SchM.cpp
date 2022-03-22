@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infSchM_Version.h"
+#include "SchM_Cfg.h"
 #include "infSchM_EcuM.h"
 #include "infSchM_Dcm.h"
 #include "infSchM_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define SCHM_AR_RELEASE_MAJOR_VERSION                                          4
+#define SCHM_AR_RELEASE_MINOR_VERSION                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(SCHM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible SCHM_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(SCHM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible SCHM_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -65,6 +74,11 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 }
 
 FUNC(void, SCHM_CODE) module_SchM::GetVersionInfo(void){
+#if(STD_ON == SchM_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
