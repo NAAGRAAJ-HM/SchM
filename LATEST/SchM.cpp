@@ -43,6 +43,16 @@ class module_SchM:
       FUNC(void, SCHM_CODE) MainFunction   (void);
       FUNC(void, SCHM_CODE) Start          (void);
       FUNC(void, SCHM_CODE) StartTiming    (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, SCHM_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
