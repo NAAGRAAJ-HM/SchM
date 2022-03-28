@@ -100,7 +100,13 @@ FUNC(void, SCHM_CODE) module_SchM::Start(void){
 FUNC(void, SCHM_CODE) module_SchM::StartTiming(void){
 }
 
-#include "SchM_Unused.hpp"
+class class_SchM_Unused{
+   public:
+      FUNC(void, SCHM_CODE) Enter              (void);
+      FUNC(void, SCHM_CODE) Exit               (void);
+      FUNC(void, SCHM_CODE) ActMainFunction    (void);
+      FUNC(void, SCHM_CODE) CancelMainFunction (void);
+};
 
 FUNC(void, SCHM_CODE) class_SchM_Unused::ActMainFunction(void){
 }
