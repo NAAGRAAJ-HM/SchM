@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgSchM.hpp"
 #include "infSchM_EcuM.hpp"
 #include "infSchM_Dcm.hpp"
 #include "infSchM_SchM.hpp"
@@ -37,40 +36,44 @@ class module_SchM:
    ,  public infSchM_EcuM
 {
    public:
+      module_SchM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
-      FUNC(void, SCHM_CODE) GetVersionInfo (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
+
       FUNC(void, SCHM_CODE) Start          (void);
       FUNC(void, SCHM_CODE) StartTiming    (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, SCHM_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_SchM, SCHM_VAR) SchM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-
-/******************************************************************************/
-/* PARAMS                                                                     */
-/******************************************************************************/
-
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-VAR(module_SchM, SCHM_VAR) SchM;
 CONSTP2VAR(infEcuMClient, SCHM_VAR, SCHM_CONST) gptrinfEcuMClient_SchM = &SchM;
 CONSTP2VAR(infDcmClient,  SCHM_VAR, SCHM_CONST) gptrinfDcmClient_SchM  = &SchM;
 CONSTP2VAR(infSchMClient, SCHM_VAR, SCHM_CONST) gptrinfSchMClient_SchM = &SchM;
 CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
+
+/******************************************************************************/
+/* PARAMS                                                                     */
+/******************************************************************************/
+#include "CfgSchM.hpp"
+
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+VAR(module_SchM, SCHM_VAR) SchM(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -81,14 +84,6 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(void){
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
    SchM.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, SCHM_CODE) module_SchM::GetVersionInfo(void){
-#if(STD_ON == SchM_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
