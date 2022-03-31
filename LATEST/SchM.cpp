@@ -38,10 +38,9 @@ class module_SchM:
    public:
       module_SchM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, SCHM_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SCHM_CODE) InitFunction   (void);
       FUNC(void, SCHM_CODE) DeInitFunction (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
 
@@ -82,23 +81,39 @@ VAR(module_SchM, SCHM_VAR) SchM(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SCHM_CODE) module_SchM::InitFunction(
-   CONSTP2CONST(CfgSchM_Type, CFGSCHM_CONFIG_DATA, CFGSCHM_APPL_CONST) lptrCfgSchM
+   CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgSchM){
+   if(E_OK == IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgSchM for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == SchM_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_SchM as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   SchM.IsInitDone = E_OK;
 }
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
-   SchM.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == SchM_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
