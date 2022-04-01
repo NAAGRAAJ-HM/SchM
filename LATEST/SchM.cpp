@@ -83,6 +83,7 @@ VAR(module_SchM, SCHM_VAR) SchM(
 FUNC(void, SCHM_CODE) module_SchM::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == SchM_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
@@ -90,6 +91,7 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SchM_DevErrorDetect)
          Det_ReportError(
@@ -101,10 +103,13 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
 // use PBcfg_SchM as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == SchM_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
+#if(STD_ON == SchM_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
@@ -112,11 +117,26 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == SchM_InitCheck)
    }
+#endif
 }
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
+#if(STD_ON == SchM_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == SchM_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == SchM_InitCheck)
+   }
+#endif
 }
 
 FUNC(void, SCHM_CODE) module_SchM::Start(void){
