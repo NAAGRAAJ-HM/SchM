@@ -106,8 +106,8 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgSchM;
          }
       }
       IsInitDone = E_OK;
