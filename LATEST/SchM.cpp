@@ -31,9 +31,18 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_SchM_Functionality{
+   public:
+      FUNC(void, SCHM_CODE) Enter              (void);
+      FUNC(void, SCHM_CODE) Exit               (void);
+      FUNC(void, SCHM_CODE) ActMainFunction    (void);
+      FUNC(void, SCHM_CODE) CancelMainFunction (void);
+};
+
 class module_SchM:
       public abstract_module
    ,  public infSchM_EcuM
+   ,  public class_SchM_Functionality
 {
    public:
       module_SchM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -89,6 +98,10 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -97,6 +110,10 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == SchM_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -121,6 +138,10 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -137,6 +158,10 @@ FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == SchM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -153,24 +178,16 @@ FUNC(void, SCHM_CODE) module_SchM::Start(void){
 FUNC(void, SCHM_CODE) module_SchM::StartTiming(void){
 }
 
-class class_SchM_Unused{
-   public:
-      FUNC(void, SCHM_CODE) Enter              (void);
-      FUNC(void, SCHM_CODE) Exit               (void);
-      FUNC(void, SCHM_CODE) ActMainFunction    (void);
-      FUNC(void, SCHM_CODE) CancelMainFunction (void);
-};
-
-FUNC(void, SCHM_CODE) class_SchM_Unused::ActMainFunction(void){
+FUNC(void, SCHM_CODE) class_SchM_Functionality::ActMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Unused::CancelMainFunction(void){
+FUNC(void, SCHM_CODE) class_SchM_Functionality::CancelMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Unused::Enter(void){
+FUNC(void, SCHM_CODE) class_SchM_Functionality::Enter(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Unused::Exit(void){
+FUNC(void, SCHM_CODE) class_SchM_Functionality::Exit(void){
 }
 
 /******************************************************************************/
