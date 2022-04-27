@@ -31,14 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_SchM_Functionality{
-   public:
-      FUNC(void, SCHM_CODE) Enter              (void);
-      FUNC(void, SCHM_CODE) Exit               (void);
-      FUNC(void, SCHM_CODE) ActMainFunction    (void);
-      FUNC(void, SCHM_CODE) CancelMainFunction (void);
-};
-
 class module_SchM:
       public abstract_module
    ,  public infSchM_EcuM
