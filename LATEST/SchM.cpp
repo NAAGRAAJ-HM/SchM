@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgSchM.hpp"
 #include "SchM_core.hpp"
-#include "infSchM_EcuM.hpp"
-#include "infSchM_Dcm.hpp"
-#include "infSchM_SchM.hpp"
+#include "infSchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -34,6 +33,7 @@
 /******************************************************************************/
 class module_SchM:
       public abstract_module
+      //TBD: move to infSchM.hpp
    ,  public infSchM_EcuM
    ,  public class_SchM_Functionality
 {
@@ -45,6 +45,7 @@ class module_SchM:
       );
       FUNC(void, SCHM_CODE) DeInitFunction (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
+      SCHM_CORE_FUNCTIONALITIES
 
       FUNC(void, SCHM_CODE) Start          (void);
       FUNC(void, SCHM_CODE) StartTiming    (void);
@@ -63,7 +64,6 @@ CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgSchM.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
