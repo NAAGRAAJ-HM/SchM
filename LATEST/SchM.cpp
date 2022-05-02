@@ -171,16 +171,16 @@ FUNC(void, SCHM_CODE) module_SchM::Start(void){
 FUNC(void, SCHM_CODE) module_SchM::StartTiming(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Functionality::ActMainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::ActMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Functionality::CancelMainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::CancelMainFunction(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Functionality::Enter(void){
+FUNC(void, SCHM_CODE) module_SchM::Enter(void){
 }
 
-FUNC(void, SCHM_CODE) class_SchM_Functionality::Exit(void){
+FUNC(void, SCHM_CODE) module_SchM::Exit(void){
 }
 
 /******************************************************************************/
