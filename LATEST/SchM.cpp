@@ -119,7 +119,7 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SCHM_E_UNINIT
       );
 #endif
    }
@@ -139,7 +139,7 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SCHM_E_UNINIT
       );
 #endif
    }
@@ -158,7 +158,7 @@ FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  SCHM_E_UNINIT
       );
 #endif
    }
