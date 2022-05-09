@@ -37,6 +37,13 @@ class module_SchM:
    ,  public infSchM_EcuM
    ,  public class_SchM_Functionality
 {
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+            Std_TypeReturn          IsInitDone{E_NOT_OK};
+      const CfgModule_TypeAbstract* lptrCfg{(CfgModule_TypeAbstract*)NULL_PTR};
+
    public:
       module_SchM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
