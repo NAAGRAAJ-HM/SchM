@@ -95,7 +95,10 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SchM_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -133,7 +136,10 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
 
 FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 #if(STD_ON == SchM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SchM_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -153,7 +159,10 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 
 FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
 #if(STD_ON == SchM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == SchM_InitCheck)
    }
