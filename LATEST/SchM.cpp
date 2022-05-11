@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgSchM.hpp"
 #include "SchM_core.hpp"
-#include "infSchM.hpp"
+#include "infSchM_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SchM:
+   INTERFACES_EXPORTED_SCHM
       public abstract_module
       //TBD: move to infSchM.hpp
    ,  public infSchM_EcuM
