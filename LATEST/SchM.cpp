@@ -32,10 +32,8 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_SchM:
-   INTERFACES_EXPORTED_SCHM
-      public abstract_module
-      //TBD: move to infSchM.hpp
-   ,  public infSchM_EcuM
+      INTERFACES_EXPORTED_SCHM
+   ,  public abstract_module
    ,  public class_SchM_Functionality
 {
    private:
