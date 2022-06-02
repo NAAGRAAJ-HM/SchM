@@ -76,6 +76,10 @@ CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
 /******************************************************************************/
 VAR(module_SchM, SCHM_VAR) SchM(
    {
+#if(STD_ON == _ReSIM)
+// char strModuleName[6];
+#else
+#endif
          SCHM_AR_RELEASE_VERSION_MAJOR
       ,  SCHM_AR_RELEASE_VERSION_MINOR
       ,  0x00
