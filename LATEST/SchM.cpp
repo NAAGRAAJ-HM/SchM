@@ -10,6 +10,7 @@
 #include "CfgSchM.hpp"
 #include "SchM_core.hpp"
 #include "infSchM_Exp.hpp"
+#include "infSchM_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
