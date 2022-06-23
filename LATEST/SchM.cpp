@@ -134,7 +134,9 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(
+   void
+){
 #if(STD_ON == SchM_InitCheck)
    if(
          E_OK
@@ -157,7 +159,9 @@ FUNC(void, SCHM_CODE) module_SchM::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::MainFunction(
+   void
+){
 #if(STD_ON == SchM_InitCheck)
    if(
          E_OK
@@ -179,22 +183,34 @@ FUNC(void, SCHM_CODE) module_SchM::MainFunction(void){
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_SchM::Start(void){
+FUNC(void, SCHM_CODE) module_SchM::Start(
+   void
+){
 }
 
-FUNC(void, SCHM_CODE) module_SchM::StartTiming(void){
+FUNC(void, SCHM_CODE) module_SchM::StartTiming(
+   void
+){
 }
 
-FUNC(void, SCHM_CODE) module_SchM::ActMainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::ActMainFunction(
+   void
+){
 }
 
-FUNC(void, SCHM_CODE) module_SchM::CancelMainFunction(void){
+FUNC(void, SCHM_CODE) module_SchM::CancelMainFunction(
+   void
+){
 }
 
-FUNC(void, SCHM_CODE) module_SchM::Enter(void){
+FUNC(void, SCHM_CODE) module_SchM::Enter(
+   void
+){
 }
 
-FUNC(void, SCHM_CODE) module_SchM::Exit(void){
+FUNC(void, SCHM_CODE) module_SchM::Exit(
+   void
+){
 }
 
 /******************************************************************************/
