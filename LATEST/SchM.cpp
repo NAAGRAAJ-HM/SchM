@@ -86,12 +86,7 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgSchM;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == SchM_DevErrorDetect)
