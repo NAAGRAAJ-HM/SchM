@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgSchM.hpp"
-#include "SchM_core.hpp"
-#include "infSchM_Exp.hpp"
+#include "SchM.hpp"
 #include "infSchM_Imp.hpp"
 
 /******************************************************************************/
@@ -32,29 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_SchM:
-      INTERFACES_EXPORTED_SCHM
-   ,  public abstract_module
-   ,  public class_SchM_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, SCHM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, SCHM_CODE) DeInitFunction (void);
-      FUNC(void, SCHM_CODE) MainFunction   (void);
-      SCHM_CORE_FUNCTIONALITIES
-
-      FUNC(void, SCHM_CODE) Start          (void);
-      FUNC(void, SCHM_CODE) StartTiming    (void);
-};
-
-extern VAR(module_SchM, SCHM_VAR) SchM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
