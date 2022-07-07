@@ -32,8 +32,7 @@ class infSchM_EcuM{
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-extern CONSTP2VAR(infEcuMClient, SCHM_VAR, SCHM_CONST) gptrinfEcuMClient_SchM;
-extern CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM;
+extern CONSTP2VAR(infSchM_EcuM, SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
