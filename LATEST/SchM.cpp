@@ -35,8 +35,6 @@
 /* CONSTS                                                                     */
 /******************************************************************************/
 CONSTP2VAR(infEcuMClient, SCHM_VAR, SCHM_CONST) gptrinfEcuMClient_SchM = &SchM;
-CONSTP2VAR(infDcmClient,  SCHM_VAR, SCHM_CONST) gptrinfDcmClient_SchM  = &SchM;
-CONSTP2VAR(infSchMClient, SCHM_VAR, SCHM_CONST) gptrinfSchMClient_SchM = &SchM;
 CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
 
 /******************************************************************************/
@@ -166,6 +164,17 @@ FUNC(void, SCHM_CODE) module_SchM::Enter(
 FUNC(void, SCHM_CODE) module_SchM::Exit(
    void
 ){
+}
+
+#include "CfgGen.hpp"//TBD: through local configuration pointer
+void SchM_1ms(void){
+   for(
+      uint8 lu8Index = 0;
+            lu8Index < (sizeof(CfgGen_NvM.CfgSchM.aptrSchMClients_1ms)/sizeof(infSchMClient*)); //TBD: lptrCfg 
+            lu8Index ++
+   ){
+      CfgGen_NvM.CfgSchM.aptrSchMClients_1ms[lu8Index]->MainFunction();
+   }
 }
 
 /******************************************************************************/
