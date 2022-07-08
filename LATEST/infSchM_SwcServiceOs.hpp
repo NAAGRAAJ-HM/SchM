@@ -1,15 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : SchM.hpp                                                          */
+/* File   : infSchM_SwcServiceOs.hpp                                          */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CfgSchM.hpp"
-#include "SchM_core.hpp"
-#include "infSchM_Exp.hpp"
+#include "CompilerCfg_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -22,35 +20,18 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_SchM:
-      INTERFACES_EXPORTED_SCHM
-   ,  public abstract_module
-   ,  public class_SchM_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
+class infSchM_SwcServiceOs{
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, SCHM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, SCHM_CODE) DeInitFunction (void);
-      FUNC(void, SCHM_CODE) MainFunction   (void);
-      SCHM_CORE_FUNCTIONALITIES
-
-      FUNC(void, SCHM_CODE) Start          (void);
-      FUNC(void, SCHM_CODE) StartTiming    (void);
-      FUNC(void, SCHM_CODE) SchM_1ms       (void);
+      virtual FUNC(void, SCHM_CODE) SchM_1ms (void) = 0;
 };
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+extern CONSTP2VAR(infSchM_SwcServiceOs, SCHM_VAR, SCHM_CONST) gptrinfSchM_SwcServiceOs;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
@@ -59,7 +40,6 @@ class module_SchM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_SchM, SCHM_VAR) SchM;
 
 /******************************************************************************/
 /* EOF                                                                        */

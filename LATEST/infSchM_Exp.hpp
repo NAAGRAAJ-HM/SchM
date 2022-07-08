@@ -7,13 +7,15 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infSchM_EcuM.hpp"
 #include "infSchM_Det.hpp"
+#include "infSchM_EcuM.hpp"
+#include "infSchM_SwcServiceOs.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define INTERFACES_EXPORTED_SCHM                             public infSchM_EcuM
+#define INTERFACES_EXPORTED_SCHM                   public infSchM_EcuM         \
+                                                ,  public infSchM_SwcServiceOs \
 
 /******************************************************************************/
 /* MACROS                                                                     */

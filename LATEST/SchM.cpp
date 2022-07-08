@@ -34,7 +34,9 @@
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-CONSTP2VAR(infSchM_EcuM,  SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM       = &SchM;
+CONSTP2VAR(infSchM_EcuM,         SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM         = &SchM;
+CONSTP2VAR(infSchM_SwcServiceOs, SCHM_VAR, SCHM_CONST) gptrinfSchM_SwcServiceOs = &SchM;
+
 
 /******************************************************************************/
 /* PARAMS                                                                     */
@@ -165,14 +167,13 @@ FUNC(void, SCHM_CODE) module_SchM::Exit(
 ){
 }
 
-#include "CfgGen.hpp"//TBD: through local configuration pointer
-void SchM_1ms(void){
+FUNC(void, SCHM_CODE) module_SchM::SchM_1ms(void){
    for(
       uint8 lu8Index = 0;
-            lu8Index < (sizeof(CfgGen_NvM.CfgSchM.aptrSchMClients_1ms)/sizeof(infSchMClient*)); //TBD: lptrCfg 
+            lu8Index < (sizeof(((CfgSchM_Type*)lptrCfg)->aptrSchMClients_1ms)/sizeof(infSchMClient*));
             lu8Index ++
    ){
-      CfgGen_NvM.CfgSchM.aptrSchMClients_1ms[lu8Index]->MainFunction();
+      ((CfgSchM_Type*)lptrCfg)->aptrSchMClients_1ms[lu8Index]->MainFunction();
    }
 }
 
