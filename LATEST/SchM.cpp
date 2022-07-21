@@ -34,9 +34,6 @@
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
-CONSTP2VAR(infSchM_EcuM,         SCHM_VAR, SCHM_CONST) gptrinfSchM_EcuM         = &SchM;
-CONSTP2VAR(infSchM_SwcServiceOs, SCHM_VAR, SCHM_CONST) gptrinfSchM_SwcServiceOs = &SchM;
-
 
 /******************************************************************************/
 /* PARAMS                                                                     */
