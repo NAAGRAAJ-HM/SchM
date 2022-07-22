@@ -167,10 +167,10 @@ FUNC(void, SCHM_CODE) module_SchM::Exit(
 FUNC(void, SCHM_CODE) module_SchM::SchM_1ms(void){
    for(
       uint8 lu8Index = 0;
-            lu8Index < (sizeof(((CfgSchM_Type*)lptrCfg)->aptrSchMClients_1ms)/sizeof(infSchMClient*));
+            lu8Index < lptrConstSchM->u8SizeSchMClients;
             lu8Index ++
    ){
-      ((CfgSchM_Type*)lptrCfg)->aptrSchMClients_1ms[lu8Index]->MainFunction();
+      lptrConstSchM->aptrSchMClients_1ms[lu8Index]->MainFunction();
    }
 }
 
