@@ -48,7 +48,8 @@ VAR(module_SchM, SCHM_VAR) SchM;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SCHM_CODE) module_SchM::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, SCHM_CONST,       SCHM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == SchM_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == SchM_DevErrorDetect)

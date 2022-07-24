@@ -32,14 +32,15 @@ class module_SchM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstSchM_Type* lptrConst;
+      const ConstSchM_Type* lptrConst = (ConstSchM_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, SCHM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, SCHM_CONST,       SCHM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, SCHM_CODE) DeInitFunction (void);
       FUNC(void, SCHM_CODE) MainFunction   (void);
