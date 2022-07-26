@@ -61,7 +61,7 @@ FUNC(void, SCHM_CODE) module_SchM::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstSchM_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
