@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SCHM_AR_RELEASE_VERSION_MAJOR                                          4
-#define SCHM_AR_RELEASE_VERSION_MINOR                                          3
+#define SERVICESCHM_AR_RELEASE_VERSION_MAJOR                                          4
+#define SERVICESCHM_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SCHM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible SCHM_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICESCHM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICESCHM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(SCHM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible SCHM_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICESCHM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICESCHM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceSchM, SCHM_VAR) ServiceSchM;
+VAR(module_ServiceSchM, SERVICESCHM_VAR) ServiceSchM;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, SCHM_CODE) module_ServiceSchM::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, SCHM_CONST,       SCHM_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICESCHM_CONST,       SERVICESCHM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESCHM_CONFIG_DATA, SERVICESCHM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceSchM_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, SCHM_CODE) module_ServiceSchM::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SCHM_E_UNINIT
+         ,  SERVICESCHM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::DeInitFunction(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceSchM_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, SCHM_CODE) module_ServiceSchM::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SCHM_E_UNINIT
+         ,  SERVICESCHM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::MainFunction(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::MainFunction(
    void
 ){
 #if(STD_ON == ServiceSchM_InitCheck)
@@ -132,44 +132,44 @@ FUNC(void, SCHM_CODE) module_ServiceSchM::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  SCHM_E_UNINIT
+         ,  SERVICESCHM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::Start(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::Start(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::StartTiming(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::StartTiming(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::ActMainFunction(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ActMainFunction(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::McalCancelMainFunction(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::McalCancelMainFunction(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::Enter(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::Enter(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::Exit(
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::Exit(
    void
 ){
 }
 
-FUNC(void, SCHM_CODE) module_ServiceSchM::ServiceSchM_1ms(void){
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_1ms(void){
    for(
       uint8 lu8Index = 0;
             lu8Index < lptrConst->u8SizeServiceSchMClients;

@@ -14,7 +14,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define INTERFACES_EXPORTED_SCHM                   public infServiceSchM_ServiceEcuM         \
+#define INTERFACES_EXMCALPORTED_SERVICESCHM                   public infServiceSchM_ServiceEcuM         \
                                                 ,  public infServiceSchM_ServiceSwcOs \
 
 /******************************************************************************/

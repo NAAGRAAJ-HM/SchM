@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSchM:
-      INTERFACES_EXPORTED_SCHM
+      INTERFACES_EXMCALPORTED_SERVICESCHM
    ,  public abstract_module
    ,  public class_ServiceSchM_Functionality
 {
@@ -38,17 +38,17 @@ class module_ServiceSchM:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, SCHM_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, SCHM_CONST,       SCHM_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SCHM_CONFIG_DATA, SCHM_APPL_CONST) lptrCfgModule
+      FUNC(void, SERVICESCHM_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, SERVICESCHM_CONST,       SERVICESCHM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESCHM_CONFIG_DATA, SERVICESCHM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SCHM_CODE) DeInitFunction (void);
-      FUNC(void, SCHM_CODE) MainFunction   (void);
-      SCHM_CORE_FUNCTIONALITIES
+      FUNC(void, SERVICESCHM_CODE) DeInitFunction (void);
+      FUNC(void, SERVICESCHM_CODE) MainFunction   (void);
+      SERVICESCHM_CORE_FUNCTIONALITIES
 
-      FUNC(void, SCHM_CODE) Start          (void);
-      FUNC(void, SCHM_CODE) StartTiming    (void);
-      FUNC(void, SCHM_CODE) ServiceSchM_1ms       (void);
+      FUNC(void, SERVICESCHM_CODE) Start          (void);
+      FUNC(void, SERVICESCHM_CODE) StartTiming    (void);
+      FUNC(void, SERVICESCHM_CODE) ServiceSchM_1ms       (void);
 };
 
 /******************************************************************************/
@@ -62,7 +62,7 @@ class module_ServiceSchM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_ServiceSchM, SCHM_VAR) ServiceSchM;
+extern VAR(module_ServiceSchM, SERVICESCHM_VAR) ServiceSchM;
 
 /******************************************************************************/
 /* EOF                                                                        */

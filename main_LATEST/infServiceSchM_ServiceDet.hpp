@@ -21,7 +21,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      SCHM_E_UNINIT
+      SERVICESCHM_E_UNINIT
 }ServiceSchM_TypeServiceDetErrorCode;
 
 /******************************************************************************/

@@ -12,17 +12,17 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SCHM_CORE_FUNCTIONALITIES                                              \
-              FUNC(void, SCHM_CODE) Enter              (void);                 \
-              FUNC(void, SCHM_CODE) Exit               (void);                 \
-              FUNC(void, SCHM_CODE) ActMainFunction    (void);                 \
-              FUNC(void, SCHM_CODE) McalCancelMainFunction (void);                 \
+#define SERVICESCHM_CORE_FUNCTIONALITIES                                              \
+              FUNC(void, SERVICESCHM_CODE) Enter              (void);                 \
+              FUNC(void, SERVICESCHM_CODE) Exit               (void);                 \
+              FUNC(void, SERVICESCHM_CODE) ActMainFunction    (void);                 \
+              FUNC(void, SERVICESCHM_CODE) McalCancelMainFunction (void);                 \
 
-#define SCHM_CORE_FUNCTIONALITIES_VIRTUAL                                      \
-      virtual FUNC(void, SCHM_CODE) Enter              (void) = 0;             \
-      virtual FUNC(void, SCHM_CODE) Exit               (void) = 0;             \
-      virtual FUNC(void, SCHM_CODE) ActMainFunction    (void) = 0;             \
-      virtual FUNC(void, SCHM_CODE) McalCancelMainFunction (void) = 0;             \
+#define SERVICESCHM_CORE_FUNCTIONALITIES_VIRTUAL                                      \
+      virtual FUNC(void, SERVICESCHM_CODE) Enter              (void) = 0;             \
+      virtual FUNC(void, SERVICESCHM_CODE) Exit               (void) = 0;             \
+      virtual FUNC(void, SERVICESCHM_CODE) ActMainFunction    (void) = 0;             \
+      virtual FUNC(void, SERVICESCHM_CODE) McalCancelMainFunction (void) = 0;             \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -33,7 +33,7 @@
 /******************************************************************************/
 class class_ServiceSchM_Functionality{
    public:
-      SCHM_CORE_FUNCTIONALITIES_VIRTUAL
+      SERVICESCHM_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

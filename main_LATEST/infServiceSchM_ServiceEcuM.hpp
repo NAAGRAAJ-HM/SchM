@@ -25,8 +25,8 @@ class infServiceSchM_ServiceEcuM{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      virtual FUNC(void, SCHM_CODE) Start       (void) = 0;
-      virtual FUNC(void, SCHM_CODE) StartTiming (void) = 0;
+      virtual FUNC(void, SERVICESCHM_CODE) Start       (void) = 0;
+      virtual FUNC(void, SERVICESCHM_CODE) StartTiming (void) = 0;
 };
 
 /******************************************************************************/
