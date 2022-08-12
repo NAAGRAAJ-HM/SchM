@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceSchM:
-      INTERFACES_EXMCALPORTED_SERVICESCHM
+      INTERFACES_EXPORTED_SERVICESCHM
    ,  public abstract_module
    ,  public class_ServiceSchM_Functionality
 {
