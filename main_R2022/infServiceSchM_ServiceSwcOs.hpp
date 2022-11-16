@@ -25,7 +25,8 @@ class infServiceSchM_ServiceSwcOs{
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      virtual FUNC(void, SERVICESCHM_CODE) ServiceSchM_1ms (void) = 0;
+      virtual FUNC(void, SERVICESCHM_CODE) ServiceSchM_1ms  (void) = 0;
+      virtual FUNC(void, SERVICESCHM_CODE) ServiceSchM_25ms (void) = 0;
 };
 
 /******************************************************************************/

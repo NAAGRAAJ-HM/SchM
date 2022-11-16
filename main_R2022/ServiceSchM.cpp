@@ -172,10 +172,20 @@ FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::Exit(
 FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_1ms(void){
    for(
       uint8 lu8Index = 0;
-            lu8Index < lptrConst->u8SizeServiceSchMClients;
+            lu8Index < lptrConst->u8SizeServiceSchMClients_1ms;
             lu8Index ++
    ){
       lptrConst->aptrServiceSchMClients_1ms[lu8Index]->MainFunction();
+   }
+}
+
+FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_25ms(void){
+   for(
+      uint8 lu8Index = 0;
+            lu8Index < lptrConst->u8SizeServiceSchMClients_25ms;
+            lu8Index ++
+   ){
+      lptrConst->aptrServiceSchMClients_25ms[lu8Index]->MainFunction();
    }
 }
 

@@ -42,13 +42,14 @@ class module_ServiceSchM:
             CONSTP2CONST(ConstModule_TypeAbstract, SERVICESCHM_CONST,       SERVICESCHM_APPL_CONST) lptrConstModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESCHM_CONFIG_DATA, SERVICESCHM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, SERVICESCHM_CODE) DeInitFunction (void);
-      FUNC(void, SERVICESCHM_CODE) MainFunction   (void);
+      FUNC(void, SERVICESCHM_CODE) DeInitFunction   (void);
+      FUNC(void, SERVICESCHM_CODE) MainFunction     (void);
       SERVICESCHM_CORE_FUNCTIONALITIES
 
-      FUNC(void, SERVICESCHM_CODE) Start          (void);
-      FUNC(void, SERVICESCHM_CODE) StartTiming    (void);
-      FUNC(void, SERVICESCHM_CODE) ServiceSchM_1ms       (void);
+      FUNC(void, SERVICESCHM_CODE) Start            (void);
+      FUNC(void, SERVICESCHM_CODE) StartTiming      (void);
+      FUNC(void, SERVICESCHM_CODE) ServiceSchM_1ms  (void);
+      FUNC(void, SERVICESCHM_CODE) ServiceSchM_25ms (void);
 };
 
 /******************************************************************************/
