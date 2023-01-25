@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : ServiceSchM.hpp                                                          */
+/* File   : ServiceSchM.hpp                                                   */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstServiceSchM.hpp"
+#include "infServiceSchM_ServiceNvM_Types.hpp"
 #include "CfgServiceSchM.hpp"
 #include "ServiceSchM_core.hpp"
 #include "infServiceSchM_Exp.hpp"
