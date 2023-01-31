@@ -13,19 +13,10 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define SERVICESCHM_AR_RELEASE_VERSION_MAJOR                                   4
-#define SERVICESCHM_AR_RELEASE_VERSION_MINOR                                   3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(SERVICESCHM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible SERVICESCHM_AR_RELEASE_VERSION_MAJOR!"
-#endif
-
-#if(SERVICESCHM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible SERVICESCHM_AR_RELEASE_VERSION_MINOR!"
-#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -48,7 +39,7 @@ VAR(module_ServiceSchM, SERVICESCHM_VAR) ServiceSchM;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, SERVICESCHM_CONST,       SERVICESCHM_APPL_CONST) lptrConstModule
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICESCHM_CONST,       SERVICESCHM_APPL_CONST) lptrNvMBlocksRomModule
    ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICESCHM_CONFIG_DATA, SERVICESCHM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceSchM_InitCheck)
@@ -58,10 +49,10 @@ FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::InitFunction(
    ){
 #endif
       if(
-            (NULL_PTR != lptrConstModule)
+            (NULL_PTR != lptrNvMBlocksRomModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = (const ConstServiceSchM_Type*)lptrConstModule;
+         lptrNvMBlocksRom = lptrNvMBlocksRomModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
@@ -172,10 +163,10 @@ FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::Exit(
 FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_1ms(void){
    for(
       uint8 lu8Index = 0;
-            lu8Index < lptrConst->u8SizeServiceSchMClients_1ms;
+            lu8Index < ((NvM_BlocksRom_ServiceSchM_Type*)lptrNvMBlocksRom)->u8SizeServiceSchMClients_1ms;
             lu8Index ++
    ){
-      lptrConst->aptrServiceSchMClients_1ms[lu8Index]->MainFunction();
+      ((NvM_BlocksRom_ServiceSchM_Type*)lptrNvMBlocksRom)->aptrServiceSchMClients_1ms[lu8Index]->MainFunction();
    }
 }
 
@@ -184,10 +175,10 @@ FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_25ms(void){
    ReSim.MainFunction();
    for(
       uint8 lu8Index = 0;
-            lu8Index < lptrConst->u8SizeServiceSchMClients_25ms;
+            lu8Index < ((NvM_BlocksRom_ServiceSchM_Type*)lptrNvMBlocksRom)->u8SizeServiceSchMClients_25ms;
             lu8Index ++
    ){
-      lptrConst->aptrServiceSchMClients_25ms[lu8Index]->MainFunction();
+      ((NvM_BlocksRom_ServiceSchM_Type*)lptrNvMBlocksRom)->aptrServiceSchMClients_25ms[lu8Index]->MainFunction();
    }
 }
 
