@@ -16,14 +16,16 @@
 class NvM_BlocksRom_ServiceSchM_Type:
       public ConstModule_TypeAbstract
 {
-/******************************************************************************/
-/* CONSTS                                                                     */
-/******************************************************************************/
    public:
       uint8                 u8SizeServiceSchMClients_1ms;
       infServiceSchMClient* aptrServiceSchMClients_1ms[ServiceSchM_SizeServiceSchMClients_1ms];
       uint8                 u8SizeServiceSchMClients_25ms;
       infServiceSchMClient* aptrServiceSchMClients_25ms[ServiceSchM_SizeServiceSchMClients_25ms];
+};
+
+class NvM_BlocksNv_ServiceSchM_Type:
+      public CfgModule_TypeAbstract
+{
 };
 
 /******************************************************************************/
