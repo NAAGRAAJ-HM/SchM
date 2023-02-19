@@ -172,7 +172,7 @@ FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_1ms(void){
 
 #include "ReSimFm.hpp"
 FUNC(void, SERVICESCHM_CODE) module_ServiceSchM::ServiceSchM_25ms(void){
-   ReSim.MainFunction();
+//   ReSim.MainFunction();
    for(
       uint8 lu8Index = 0;
             lu8Index < ((NvM_BlocksRom_ServiceSchM_Type*)lptrNvMBlocksRom)->u8SizeServiceSchMClients_25ms;
