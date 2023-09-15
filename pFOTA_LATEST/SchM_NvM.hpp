@@ -1,6 +1,6 @@
 
 #ifndef SCHM_NVM_H
-# define SCHM_NVM_H
+#define SCHM_NVM_H
 
 #include "SwcServiceOs.hpp"
 
